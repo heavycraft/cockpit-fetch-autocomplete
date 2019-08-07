@@ -20,7 +20,8 @@ Endpoint:
 `https://www.example.com/api?q=searchterm`
 
 JSON Response:
-`{
+```
+{
     "products": [
         {
             "name": "Product Name 1",
@@ -31,17 +32,20 @@ JSON Response:
             "sku": "ABCXYZ002" 
         }
     ]
-}`
+}
+```
 
 Options:
 
-`{
+```
+{
   "url": "https://www.example.com/api",
   "param": "q",
   "root": "products",
   "value": "sku",
   "title": "name"
-}`
+}
+```
 
 ## Copyright and license
 
