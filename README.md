@@ -12,6 +12,7 @@ Field Options:
 - `root` - JSON array element root (Default: JSON root element)
 - `value` - Element name of value (Default: `value`)
 - `title` - Element name of title (Default: `title`)
+- `limit` - Limit parameter (Default: `limit`)
 
 ## Example:
 

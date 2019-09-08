@@ -34,7 +34,7 @@
         var url = new URL($this.opts.url);
         var params = {
           [$this.opts.param || 'search']: this.value,
-          limit: 6
+          [$this.opts.limit || 'limit']: 6
         };
         Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
         fetch(url)
