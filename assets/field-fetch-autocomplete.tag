@@ -42,7 +42,7 @@
             return response.json()
           })
           .then(function(response) {
-            var items = $this.opts.root ? response[$this.opts.root] : response;
+            var items =  ($this.opts.root || '').split('.').reduce((o, i) => o[i] = {}, response) || response;
             if(items && items.length > 0) {
               var result = items.map(function(item) {
                 return {
