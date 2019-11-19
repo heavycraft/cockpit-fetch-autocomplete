@@ -75,6 +75,7 @@
     });
 
     App.$(this.root).on("selectitem.uk.autocomplete", function(e, data) {
+      console.log(data);
       $this.item = data.title;
       $this.$setValue(data.value, false, opts.bind);
       $this.$setValue(data.title, false, opts.bind + '_title');
