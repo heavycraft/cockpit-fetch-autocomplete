@@ -67,8 +67,8 @@
     }
 
     this.on('mount', function() {
-      this.item = this.$getValue(opts.bind + '_title');
-      console.log(this.item);
+      $this.item = this.$getValue(opts.bind + '_title');
+      console.log($this.item);
       UIkit.autocomplete(this.refs.autocomplete, {
           source: this.getData,
           template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">{{~items}}<li data-title="{{$item.title}}" data-value="{{$item.value}}"><a>{{$item.title}}</a></li>{{/items}}</ul>'
