@@ -31,7 +31,9 @@
     var item;
     this.getData = function(release) {
       if($this.opts.url && this.value) {
-        var url = new URL($this.opts.url);
+        var url;
+        var base = $this.opts.url.indexOf('http') !== 0 ? window.location.protocol + '//' + window.location.hostname : ''
+        var url = new URL(base + $this.opts.url);
         var params = {
           [$this.opts.param || 'search']: this.value,
           [$this.opts.limit || 'limit']: 6
@@ -67,8 +69,7 @@
     }
 
     this.on('mount', function() {
-      $this.item = this.$getValue(opts.bind + '_title');
-      console.log($this.item);
+      this.item = this.$getValue(opts.bind + '_title');
       UIkit.autocomplete(this.refs.autocomplete, {
           source: this.getData,
           template: '<ul class="uk-nav uk-nav-autocomplete uk-autocomplete-results">{{~items}}<li data-title="{{$item.title}}" data-value="{{$item.value}}"><a>{{$item.title}}</a></li>{{/items}}</ul>'
