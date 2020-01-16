@@ -46,6 +46,11 @@
           .then(function(response) {
             var items =  ($this.opts.root || '').split('.').reduce((o, i) => o[i], response) || response;
             if(items && items.length > 0) {
+              if($this.opts.filter) {
+                items = items.filter(function(i) {
+                  return i[$this.opts.filter.key] === $this.opts.filter.value
+                });
+              }
               var result = items.map(function(item) {
                 return {
                   value: item[$this.opts.value || 'value'],
