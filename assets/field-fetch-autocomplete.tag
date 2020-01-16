@@ -33,7 +33,6 @@
       if($this.opts.url && this.value) {
         var url;
         var base = $this.opts.url.indexOf('http') !== 0 ? window.location.protocol + '//' + window.location.hostname : ''
-        console.log(base, $this.opts.url)
         var url = new URL(base + $this.opts.url);
         var params = {
           [$this.opts.param || 'search']: this.value,
